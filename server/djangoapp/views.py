@@ -120,6 +120,7 @@ def add_review(request):
             "message": "Error in posting review"
         })
 
+
 def get_cars(request):
     """Get all car makes and models"""
     if CarMake.objects.count() == 0:
