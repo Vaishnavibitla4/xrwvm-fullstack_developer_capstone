@@ -1,4 +1,3 @@
-from django.shortcuts import redirect
 from django.contrib.auth.models import User
 from django.contrib.auth import logout, login, authenticate
 from django.http import JsonResponse
