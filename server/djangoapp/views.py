@@ -63,7 +63,10 @@ def registration(request):
         login(request, user)
         return JsonResponse({"userName": username, "status": "Authenticated"})
     else:
-        return JsonResponse({"userName": username, "error": "Already Registered"})
+        return JsonResponse({
+            "userName": username,
+            "error": "Already Registered"
+        })
 
 
 def get_dealerships(request, state="All"):
@@ -112,8 +115,10 @@ def add_review(request):
         post_review(data)
         return JsonResponse({"status": 200})
     except Exception:
-        return JsonResponse({"status": 401, "message": "Error in posting review"})
-
+        return JsonResponse({
+            "status": 401,
+            "message": "Error in posting review"
+        })
 
 def get_cars(request):
     """Get all car makes and models"""
